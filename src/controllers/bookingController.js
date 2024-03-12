@@ -37,6 +37,8 @@ class BookingController {
             try {
                 // Fetch booking
                 const booking = yield (0, bookingService_1.getAllBookings)();
+                const bookingData = booking || [];
+                res.status(200).json(bookingData);
                 // Check if booking exists
                 if (!booking) {
                     res.status(404).json({ error: "Booking not found" });

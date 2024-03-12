@@ -17,8 +17,6 @@ const config_1 = __importDefault(require("../config/config"));
 const sequelize_1 = require("sequelize");
 const createBooking = (name, description, creatorId) => __awaiter(void 0, void 0, void 0, function* () {
     const query = "INSERT INTO public.booking (name, description, creator_id) VALUES (?, ?, ?)";
-    //   status = "pending";
-    //   const parameters = [name, description, creatorId, "pending"];
     try {
         const result = yield config_1.default.query(query, {
             replacements: [name, description, creatorId],
